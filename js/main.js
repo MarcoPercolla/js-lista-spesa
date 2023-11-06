@@ -4,7 +4,7 @@ const listaSpesa = [
     "pasta",
     "shampo",
     "acqua",
-    "carta igenica"
+    "carta igienica"
 ];
 let i = 0;
 let listElement = "";
