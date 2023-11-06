@@ -6,7 +6,16 @@ const listaSpesa = [
     "acqua",
     "carta igenica"
 ];
+let i = 0;
+let listElement = "";
+while (i < listaSpesa.length) {
+    //while (listaSpesa[i]) {
+    const listItem = listaSpesa[i];
+    listElement += `<li>${listItem}</li>`;
+    i++;
+};
 
+document.getElementById("lista").innerHTML = listElement;
 
 document.getElementById("adder").addEventListener("click", function () {
     let item = itemInput.value;
@@ -28,13 +37,25 @@ document.getElementById("adder").addEventListener("click", function () {
 });
 
 
-let i = 0;
-let listElement = "";
-while (i < listaSpesa.length) {
-    //while (listaSpesa[i]) {
-    const listItem = listaSpesa[i];
-    listElement += `<li>${listItem}</li>`;
-    i++;
-};
+document.getElementById("remover").addEventListener("click", function () {
+    let item = itemInput.value;
+    console.log(item);
+    // listaSpesa.push(item);
+    console.log(listaSpesa.length);
 
-document.getElementById("lista").innerHTML = listElement;
+    let i = 0;
+    let listElement = "";
+    while (i < listaSpesa.length) {
+        //while (listaSpesa[i]) {
+        const listItem = listaSpesa[i];
+        if (listItem == item) {
+            listaSpesa.splice(i, 1);
+            continue;
+        };
+        listElement += `<li>${listItem}</li>`;
+        i++;
+    };
+
+    document.getElementById("lista").innerHTML = listElement;
+
+});
